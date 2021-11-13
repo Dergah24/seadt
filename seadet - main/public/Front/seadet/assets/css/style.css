@@ -1,0 +1,916 @@
+@font-face {
+    font-family: 'Erotique Text';
+    src: url('../fonts/Erotique/ErotiqueText-Regular.woff2') format('woff2'),
+        url('../fonts/Erotique/ErotiqueText-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Erotique';
+    src: url('../fonts/Erotique/Erotique-Regular.woff2') format('woff2'),
+        url('../fonts/Erotique/Erotique-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Erotique';
+    src: url('../fonts/Erotique/Erotique-Bold.woff2') format('woff2'),
+        url('../fonts/Erotique/Erotique-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Erotique';
+    src: url('../fonts/Erotique/Erotique-Medium.woff2') format('woff2'),
+        url('../fonts/Erotique/Erotique-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Erotique Monoline';
+    src: url('../fonts/Erotique/Erotique-Monoline.woff2') format('woff2'),
+        url('../fonts/Erotique/Erotique-Monoline.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Glosa Roman';
+    src: url('../fonts/Glosa-Roman.woff2') format('woff2'),
+        url('../fonts/Glosa-Roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Glosa';
+    src: url('../fonts/Glosa-Bold.woff2') format('woff2'),
+        url('../fonts/Glosa-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Glosa';
+    src: url('../fonts/Glosa-Medium.woff2') format('woff2'),
+        url('../fonts/Glosa-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Glosa Medium';
+    src: url('../fonts/Glosa-MediumItalic.woff2') format('woff2'),
+        url('../fonts/Glosa-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Glosa Roman';
+    src: url('../fonts/Glosa-RomanItalic.woff2') format('woff2'),
+        url('../fonts/Glosa-RomanItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: max-content;
+    background-color: #ebebeb;
+}
+
+section {
+    padding-bottom: 100px;
+}
+
+#banner {
+    padding-bottom: 0px !important;
+}
+
+.banner-container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    height: 164vh;
+    position: relative;
+    /* display: flex; */
+    justify-content: center;
+}
+
+
+
+@media (max-width: 768px) {
+    .banner-container {
+        height: 327px;
+    }
+
+    .history_text p {
+        font-size: 18px !important;
+    }
+
+    #diamond3 {
+        bottom: -22vh !important;
+    }
+}
+
+.header {
+    width: 100%;
+    height: 5rem;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    padding: 3rem 5rem 5rem;
+    z-index: 10;
+}
+
+.header-link {}
+
+.header-left img {
+    width: 30%;
+    margin-top: 60px;
+}
+
+.header-right-menu {
+    cursor: pointer;
+}
+
+#burger {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* Hamburger Menu Animation */
+
+.header-right-menu.open .menu-burger {
+    transform: translateX(-45px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.header-right-menu.open .menu-burger::before {
+    transform: rotate(45deg) translate(45px, -45px);
+}
+
+.header-right-menu.open .menu-burger::after {
+    transform: rotate(-45deg) translate(45px, 45px);
+}
+
+#menu {
+    background: #CCA878;
+    width: 50rem;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    transition-timing-function: cubic-bezier(10, 2, 3, 1);
+    transform: translateX(50rem);
+    top: 0;
+    z-index: 0;
+    transition: 0.5s;
+}
+
+.menu-ul {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    height: 60%;
+    opacity: inherit;
+    list-style-type: none;
+    color: white;
+}
+
+.menu-ul a {
+    color: #ebebeb;
+    font-size: 75px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    float: right;
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    font-family: "Erotique Text";
+    line-height: 1.1;
+}
+
+.menu-ul a:hover {
+    color: black;
+    transition: all .3s ease-in-out;
+    /* border-bottom: 3px solid #ebebeb; */
+}
+
+.menu-socialicons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 10%;
+    right: 11%;
+    width: 18rem;
+    color: #fff;
+    font-size: 1.3rem;
+    padding-left: 20px;
+    list-style-type: none;
+    filter: brightness(0) invert(1);
+
+}
+
+.menu-socialicons a:hover {
+    -webkit-filter: none !important;
+    filter: none !important;
+    transition: all .3s ease-in-out;
+}
+
+@media screen and (max-width:768px) {
+    #menu {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .menu-ul li a {
+        font-size: 50px;
+        line-height: 58px;
+    }
+    .halls img{
+        height:auto !important;
+    }
+    .banner-bottom-image{
+        width:120px;
+    }
+}
+
+#burgercheck {
+    display: none;
+}
+.icons-all{
+    padding-bottom:30px;
+}
+
+#burgercheck:checked~#menu {
+    transform: translateX(0rem);
+}
+
+#burger {
+    position: absolute;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#burger>div {
+    height: 4px;
+    background-color: #000;
+    transition: 0.5s;
+    z-index: 999;
+}
+
+#burgercheck:checked~#burger>div {
+    background-color: #fff;
+}
+
+#burgercheck:checked~#burger>div:nth-child(1) {
+    transform: translateY(16px) rotate(45deg);
+}
+
+#burgercheck:checked~#burger>div:nth-child(2) {
+    opacity: 0;
+}
+
+#burgercheck:checked~#burger>div:nth-child(3) {
+    transform: translateY(0px) rotate(-45deg);
+}
+.banner-bottom{
+    position: relative;
+    bottom: 400px;
+}
+@media screen and (max-width:767px) {
+    #statistics{
+        margin-top:0px !important;
+    }
+}
+.banner-bottom-inside{
+    height:400px;
+}
+
+.banner-bottom-bottom h3{
+    font-family: "Erotique Monoline";
+    font-weight:bold;
+}
+@media screen and (max-width:767px) {
+    .banner-bottom-h3{
+        padding-top:20px;
+    }
+    .banner-bottom-h3,
+    .banner-bottom-p{
+        padding-left:20px;
+        padding-right:20px;
+
+    }
+}
+@media screen and  (max-width:1099px) and (min-width:768px){
+    .banner-bottom-h3{
+        padding-top:50px;
+    }
+    .banner-bottom-h3,
+    .banner-bottom-p{
+        padding-left:60px;
+        padding-right:60px;
+
+    }
+}
+
+@media screen and (min-width:1100px) {
+    .banner-bottom-h3{
+        padding-top:50px;
+    }
+    .banner-bottom-h3,
+    .banner-bottom-p{
+        padding-left:120px;
+        padding-right:120px;
+
+    }
+
+}
+
+#statistics{
+    margin-top:-400px;
+}
+
+
+
+@media screen and (max-width:767px) {
+    #banner, .banner-container{
+        height:820px;
+    } 
+    .header-left img{
+        width:35%;
+        position:relative;
+        left:-70px;
+        margin-top:0px !important;
+    }
+    .banner-bottom-image{
+        top:25px !important;
+    }
+
+
+}
+@media screen and  (max-width:991px) and (min-width:767px){
+    .banner-container{
+        height:75vh;
+    }
+}
+@media screen and  (max-width:1300px) and (min-width:991px){
+    .banner-container{
+        height:80vh;
+    }
+}
+
+
+
+
+/* statistics */
+.statistic {
+    border-bottom: 2px solid #adae92;
+    ;
+    border-right: 2px solid #adae92;
+    ;
+    text-align: center;
+    height: 340px;
+}
+
+@media screen and (max-width:991px) {
+    .statistic {
+        border-right: none;
+        margin: auto;
+    }
+
+    .halls img {
+        margin-top: -18px;
+    }
+
+
+}
+
+.statistic .statistic_inner {
+    padding: 58px;
+}
+
+.statistic .statistic_inner h3 {
+    color: #ff7f27;
+    font-size: 135px;
+    font-family: "Erotique Monoline";
+
+}
+
+.statistic .statistic_inner h4,
+.banner-bottom-bottom p {
+    font-family: "Glosa Roman";
+}
+
+.diamond-narrow {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    position: relative;
+    float: right;
+    right: -23px;
+    top: -53%;
+    z-index:1;
+}
+
+.diamond-narrow:after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    z-index:1;
+ 
+}
+
+@media screen and (max-width:991px) {
+    .diamond-narrow {
+        top: -2px !important;
+        right: 0 !important;
+        float: initial;
+        margin: auto;
+    }
+
+    #diamond3 {
+        top: -53% !important;
+    }
+
+    .diamond4 {
+        top: -18px !important;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #footer {
+        height: 100% !important;
+    }
+}
+
+.headings {
+    font-size: 42px;
+    letter-spacing: 0px;
+    line-height: 23px;
+    color: #000000;
+    font-family: "Erotique Text";
+    text-align: center;
+    padding: 20px 0;
+
+}
+
+#diamond1 {
+    border-bottom: 10px solid green;
+}
+
+#diamond1:after {
+    border-top: 10px solid green;
+}
+
+#diamond2 {
+    border-bottom: 10px solid #ff7f27;
+}
+
+#diamond2:after {
+    border-top: 10px solid #ff7f27;
+}
+
+#diamond3 {
+    border-bottom: 10px solid #ff7f27;
+    left: 10px;
+    bottom: -12em;
+}
+
+#diamond3:after {
+    border-top: 10px solid #ff7f27;
+}
+
+.diamond4 {
+    border-bottom: 10px solid #ff7f27;
+    right: -10px !important;
+}
+
+.diamond4:after {
+    border-top: 10px solid #ff7f27;
+}
+
+@media screen and (max-width:760px) {
+    section:not(:first-child) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #footer {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+
+    }
+
+    .history {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .history_text {
+        width: 100% !important;
+        position: relative;
+        top: 40%;
+        height: 240px !important;
+        margin-right: 0px !important;
+    }
+
+    .history_text p {
+        font-size: 16px;
+    }
+}
+
+.events {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    display: block;
+    padding: 0px !important;
+    opacity: 1;
+    background: #000;
+}
+
+.events img {
+    width: 100%;
+}
+
+.event-text {
+    transition: .5s ease;
+    opacity: 0;
+    position: relative;
+    transform: translate(-5%, 200%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.events :hover {
+    opacity: 0.5;
+    transition: 0.5s linear;
+}
+
+.img__description,
+.img__description2 {
+    position: absolute;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    font-family: "Erotique Text";
+    font-size: 24px;
+    float: initial;
+    transition: opacity .2s, visibility .2s;
+}
+
+.photos-logo {
+    filter: brightness(0) invert(1);
+    width: 24px !important;
+}
+
+.description-div {
+    position: relative;
+    top: 40%;
+    /* right: -20%; */
+
+}
+
+.events:hover .img__description {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+#event1 {
+    border-right: 1px solid #adae92;
+    border-bottom: 1px solid #adae92;
+}
+
+#event2 {
+    border-left: 1px solid #adae92;
+    border-bottom: 1px solid #adae92;
+}
+
+#event3 {
+    border-right: 1px solid #adae92;
+    border-top: 1px solid #adae92;
+}
+
+#event4 {
+    border-left: 1px solid #adae92;
+    border-top: 1px solid #adae92;
+}
+
+.icon {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.icon_items {
+    position: relative;
+    left: -20px;
+}
+
+.halls {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    opacity:1;
+    background:#000;
+}
+.halls :hover {
+    background:#000 !important;
+    opacity: 0.5;
+    transition: 0.5s linear;
+}
+
+.halls img {
+    width: 100%;
+    height:100%;
+}
+.halls:hover .img__description2 {
+    visibility: visible;
+    opacity: 1;
+}
+.desc-halls{
+    position: relative;
+    top: 20%;
+    margin: 0px 100px;
+}
+
+@media screen and (max-width:680px) {
+    .halls {
+        border-right: none;
+        /* height:430px; */
+    }
+
+    .halls img {
+        width: 100%;
+    }
+
+    .diamond4 {
+        right: 0px !important;
+    }
+
+    .diamond-narrow {
+        top: -19px !important;
+    }
+
+    #diamond1,
+    #diamond2 {
+        top: 0px !important;
+    }
+}
+
+.history {
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 75%;
+
+}
+
+.history #history_png {
+    width: 130px;
+}
+
+.history_text {
+    width: 51%;
+    float: right;
+    background-color: rgba(40, 57, 75, .6);
+    height: 400px;
+    padding: 1em;
+    color: white;
+    margin-right: -12px;
+}
+
+.history_text p {
+    font-size: 24px;
+    padding: 50px;
+}
+
+#reservation {
+    padding-bottom: 100px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.form input,
+textarea {
+    border: none;
+    border-bottom: 1px solid #375643;
+    margin-bottom: 20px;
+    background: transparent;
+    width: 90%;
+    font-family: "Glosa Roman";
+
+}
+
+#submit {
+    border: 1px solid #375643;
+    width: 40%;
+    padding: 7px 0px;
+    transform: translateX(120%);
+}
+
+.signs {
+    position: absolute;
+    z-index: 9;
+}
+
+.signs_back {
+    position: relative;
+    right: -38px;
+}
+
+
+/* FOOTER */
+#footer {
+    /* height:300px; */
+    background-color: #CCA878;
+    padding-bottom: 0px !important;
+}
+
+.social-media img {
+    filter: brightness(0) invert(1);
+    width: 16px;
+    margin-right: 20px;
+
+}
+
+.footer-all {
+    padding: 50px 5px;
+    /* height:195px; */
+}
+
+.footer-logo {
+    margin: auto;
+}
+
+.footer-logo,
+.footer-text,
+.social-media {
+    padding-bottom: 20px;
+}
+
+.footer-logo-inside img {
+    width: 30%;
+    transform: translateX(100%);
+}
+
+.footer-text p {
+    font-family: "Glosa Roman";
+    color: #6B583F;
+}
+
+.contact-index {
+    padding-top: 30px;
+}
+
+.contact-index div {
+    font-family: "Glosa Medium";
+    color: #776246;
+}
+
+.contact-index div a {
+    color: #776246;
+    text-decoration: none;
+}
+
+#subscribe {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #776246;
+    width: 60%;
+    color: #F0EBE3;
+    padding: 6px 0;
+}
+
+#submit-subscribe {
+    width: max-content;
+    padding: 5px 15px;
+    background: transparent;
+    border: 1px solid #776246;
+    font-family: "Glosa Roman";
+}
+
+#subscribe::placeholder {
+    color: #F0EBE3 !important;
+}
+
+.pattern {
+
+    height: 100px;
+    background-repeat: no-repeat;
+}
+
+
+/* CONTACT PAGE */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contact-form input:not(:last-child) {
+    border: none;
+    border-bottom: 1px solid #375643;
+    margin-bottom: 20px;
+    background: transparent;
+    width: 80%;
+    font-family: "Glosa Roman";
+    margin-bottom: 20px;
+}
+
+#contact_submit {
+    width: 24%;
+}
+
+.contact-address {
+    color: black;
+    font-size: 16px;
+}
+
+.contact-address h5 {
+    color: black;
+    font-size: 16px !important;
+}
+
+.contact-banner {
+    height: 10vh !important;
+}
+
+.signcontact {
+    filter: brightness(75%);
+}
+
+.contact-row {
+    padding-bottom: 100px;
+}
+
+.location {
+    padding-top: 50px;
+}
+
+@media screen and (max-width:991px) {
+    .contact-form input:not(:last-child) {
+        width: 100%;
+    }
+}
+
+.about-img {
+    width: 100%;
+}
+
+.about-text-page {
+    font-family: 'Glosa Roman';
+    padding: 20px;
+}
+.event-icon{
+    padding-bottom:0px !important;
+}
